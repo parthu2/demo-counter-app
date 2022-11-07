@@ -11,7 +11,13 @@ pipeline{
                     git branch: 'main', url: 'git@github.com:parthu2/demo-counter-app.git'
             }
         }
-        
+        stage('Maven build'){
+            
+            steps{
+                    
+                    sh 'mvn clean package'
+            }
+        }
          stage('UNIT testing'){
             
             steps{
